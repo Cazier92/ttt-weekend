@@ -7,6 +7,7 @@
 let board, turn, winner, tie
 
 
+
 /*------------------------ Cached Element References ------------------------*/
 
 const squareEls = document.getElementsByClassName('sqr')
@@ -14,6 +15,8 @@ const squareEls = document.getElementsByClassName('sqr')
 
 const messageEl = document.getElementById('message')
 // console.log(messageEl)
+// board = squareEls
+// console.log(board)
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -23,6 +26,12 @@ addEventListener('DOMContentLoaded', init)
 
 function init () {
     // console.log('init')
+    board = [null, null, null, null, null, null, null, null, null]
+    // console.log(board)
+    turn = 1
+    winner = false
+    tie = false
+    render()
 }
 
 
@@ -69,16 +78,16 @@ function init () {
 
   //// 3b) Call this `init` function when the app loads.
 
-  // 3c) Set the `board` variable to an array containing nine `null`s to 
-  //    represent empty squares.
+  //// 3c) Set the `board` variable to an array containing nine `null`s to 
+  //  //  represent empty squares.
 
-  // 3d) Set the `turn` to `1` - which will represent player X.
+  //// 3d) Set the `turn` to `1` - which will represent player X.
 
-  // 3e) Set the `winner` to false.
+  //// 3e) Set the `winner` to false.
 
-  // 3f) Set `tie` to false.
+  //// 3f) Set `tie` to false.
 
-  // 3g) Call a function called `render` at the end of the `init` function.
+  //// 3g) Call a function called `render` at the end of the `init` function.
 
 
 // Step 4 - The state of the game should be rendered to the user
