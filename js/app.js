@@ -127,9 +127,6 @@ function checkForTie() {
 // console.log(0 + null)
 
 function checkForWinner() {
-    //loop through each of the 
-    //winning combination arrays defined in the winningCombos array
-    // let total = 0
     for (let index = 0; index < winningCombos.length; index++) {
         if(Math.abs(
             board[winningCombos[index][0]]+
@@ -141,11 +138,6 @@ function checkForWinner() {
         }
         
     }
-    //total up the three board positions using the three indexes in the current combo
-
-    //convert the total to an absolute value (neg to pos)
-
-    //if total = 3, we ahve a winner, set winner to true
 }
 
 
