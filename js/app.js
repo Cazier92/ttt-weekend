@@ -6,7 +6,7 @@
 
 let board, turn, winner, tie
 
-
+// board = [null, null, null, null, null, null, null, null, null]
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -20,7 +20,8 @@ const messageEl = document.getElementById('message')
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-addEventListener('DOMContentLoaded', init)
+// addEventListener('DOMContentLoaded', init)
+init()
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -34,13 +35,27 @@ function init () {
     render()
 }
 
+function render() {}
+
+function updateBoard() {
+    // console.log(board)
+    board.forEach(function(square, squareIdx) {
+        if(square === -1) {
+            squareEls[squareIdx].innerText = 'O'
+        } else if(square === 1) {
+            squareEls[squareIdx].innerText = 'X'
+        }
+    })
+}
+updateBoard()
+
 
 //*// 1) Define the required variables used to track the state of the game
 
 //*// 2) Store cached element references
 
-//* 3) Upon loading, the game state should be initialized, and a function should be 
-//*    called to render this game state
+//*// 3) Upon loading, the game state should be initialized, and a function should be 
+//*//   called to render this game state
 
 //* 4) The state of the game should be rendered to the user
 
@@ -92,17 +107,17 @@ function init () {
 
 // Step 4 - The state of the game should be rendered to the user
 
-  // 4a) Create a function called `render`, then set it aside for now.
+  // //4a) Create a function called `render`, then set it aside for now.
 
-  // 4b) Create a function called `updateBoard`.
+  // //4b) Create a function called `updateBoard`.
 
-  // 4c) In the `updateBoard` function, loop over `board` and for each element:
-  //     - Use the current index of the iteration to access the corresponding 
-  //       square in the `squareEls` array.
-  //     - Style that square however you wish, dependent on the value  
-  //       contained in the current cell being iterated over (`-1`, `1`, or
-  //       `null`). To keep it simple, start with just putting a letter in 
-  //       each square depending on what the the value of each cell is.
+  // //4c) In the `updateBoard` function, loop over `board` and for each element:
+  // //    - Use the current index of the iteration to access the corresponding 
+  //  //     square in the `squareEls` array.
+  //   //  - Style that square however you wish, dependent on the value  
+  //   //    contained in the current cell being iterated over (`-1`, `1`, or
+  //    //   `null`). To keep it simple, start with just putting a letter in 
+  //    //   each square depending on what the the value of each cell is.
 
   // 4d) Create a function called `updateMessage`
   
