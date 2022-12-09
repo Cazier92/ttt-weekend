@@ -19,7 +19,7 @@ let board, turn, winner, tie
 
 /*------------------------ Cached Element References ------------------------*/
 
-const squareEls = document.getElementsByClassName('sqr')
+const squareEls = document.querySelectorAll('.sqr')
 // console.log(squareEls)
 
 const messageEl = document.getElementById('message')
@@ -28,17 +28,20 @@ const messageEl = document.getElementById('message')
 // console.log(board)
 
 
-const gameBoard = [
-    document.getElementById('sq0').addEventListener('click', handleClick),
-    document.getElementById('sq1').addEventListener('click', handleClick),
-    document.getElementById('sq2').addEventListener('click', handleClick),
-    document.getElementById('sq3').addEventListener('click', handleClick),
-    document.getElementById('sq4').addEventListener('click', handleClick),
-    document.getElementById('sq5').addEventListener('click', handleClick),
-    document.getElementById('sq6').addEventListener('click', handleClick),
-    document.getElementById('sq7').addEventListener('click', handleClick),
-    document.getElementById('sq8').addEventListener('click', handleClick),
-]
+// const gameBoard = [
+//     document.getElementById('sq0').addEventListener('click', handleClick),
+//     document.getElementById('sq1').addEventListener('click', handleClick),
+//     document.getElementById('sq2').addEventListener('click', handleClick),
+//     document.getElementById('sq3').addEventListener('click', handleClick),
+//     document.getElementById('sq4').addEventListener('click', handleClick),
+//     document.getElementById('sq5').addEventListener('click', handleClick),
+//     document.getElementById('sq6').addEventListener('click', handleClick),
+//     document.getElementById('sq7').addEventListener('click', handleClick),
+//     document.getElementById('sq8').addEventListener('click', handleClick),
+// ]
+
+// const gameBoard = document.querySelectorAll
+
 // console.log(gameBoard)
 // const boardClick = function() {
 
@@ -53,12 +56,14 @@ const gameBoard = [
 // gameBoard.addEventListener('click', handleClick)
 // document.getElementById('sq0').addEventListener('click', hello)
 
+squareEls.forEach(square => square.addEventListener('click', handleClick))
+
 
 /*-------------------------------- Functions --------------------------------*/
 
 function init () {
     // console.log('init')
-    board = [null, null, null, null, null, null, null, null, null]
+    board = [-1, null, 1, null, null, null, null, null, null]
     // console.log(board)
     turn = 1
     winner = false
@@ -93,9 +98,15 @@ function updateMessage() {
 // updateMessage()
 
 function handleClick(evt) {
-    sqIdx = evt.target.id
-    console.log(sqIdx)
+    const sqrIdx = evt.target.id.slice(-1)
+    // console.log(sqrIdx, typeof(sqrIdx))
+    if(board[sqrIdx] !== null || winner === true) {
+        return
+    } 
 }
+//*evt.target.innerText
+// let arrB = gameBoard.toString()
+// console.log(arrB)
 
 
 //*// 1) Define the required variables used to track the state of the game
@@ -200,6 +211,7 @@ function handleClick(evt) {
   // 6c) Obtain the index of the square that was clicked by "extracting" the 
   //     index from an `id` assigned to the target element in the HTML. Assign 
   //     this to a constant called `sqIdx`.
+  //* indexOf()?
 
   // 6d) If the `board` has a value at the `sqIdx`, immediately `return`  
   //     because that square is already taken. Also, if `winner` is not `null`
