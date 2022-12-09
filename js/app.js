@@ -63,7 +63,7 @@ squareEls.forEach(square => square.addEventListener('click', handleClick))
 
 function init () {
     // console.log('init')
-    board = [-1, null, 1, null, null, null, null, null, null]
+    board = [null, null, null, null, null, null, null, null, null]
     // console.log(board)
     turn = 1
     winner = false
@@ -99,13 +99,14 @@ function updateMessage() {
 
 function handleClick(evt) {
     const sqrIdx = parseInt(evt.target.id.slice(-1))
-    console.log(sqrIdx, typeof(sqrIdx))
+    // console.log(sqrIdx, typeof(sqrIdx))
     if(board[sqrIdx] !== null || winner === true) {
         return
     } 
     placePiece(sqrIdx)
     render()
     checkForTie()
+    checkForWinner()
 }
 // *//evt.target.innerText
 // let arrB = gameBoard.toString()
@@ -113,7 +114,7 @@ function handleClick(evt) {
 
 function placePiece(idx) {
     board[idx] = turn
-    console.log(board)
+    // console.log(board)
 }
 
 
@@ -123,8 +124,29 @@ function checkForTie() {
         tie = true
     } 
 }
+// console.log(0 + null)
 
+function checkForWinner() {
+    //loop through each of the 
+    //winning combination arrays defined in the winningCombos array
+    // let total = 0
+    for (let index = 0; index < winningCombos.length; index++) {
+        if(Math.abs(
+            board[winningCombos[index][0]]+
+        board[winningCombos[index][1]]+
+        board[winningCombos[index][2]]
+        ) === 3) {
+            winner = true
+            console.log(winner)
+        }
+        
+    }
+    //total up the three board positions using the three indexes in the current combo
 
+    //convert the total to an absolute value (neg to pos)
+
+    //if total = 3, we ahve a winner, set winner to true
+}
 
 
 
