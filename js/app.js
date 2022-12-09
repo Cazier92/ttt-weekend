@@ -23,6 +23,8 @@ const squareEls = document.querySelectorAll('.sqr')
 // console.log(squareEls)
 
 const messageEl = document.getElementById('message')
+
+
 // console.log(messageEl)
 // board = squareEls
 // console.log(board)
@@ -72,6 +74,8 @@ function init () {
 }
 init()
 
+
+
 function render() {
     updateBoard()
     updateMessage()
@@ -104,9 +108,10 @@ function handleClick(evt) {
         return
     } 
     placePiece(sqrIdx)
-    render()
     checkForTie()
     checkForWinner()
+    switchPlayerTurn()
+    render()
 }
 // *//evt.target.innerText
 // let arrB = gameBoard.toString()
@@ -134,10 +139,16 @@ function checkForWinner() {
         board[winningCombos[index][2]]
         ) === 3) {
             winner = true
-            console.log(winner)
+            // console.log(winner)
         }
         
     }
+}
+
+function switchPlayerTurn() {
+    if(winner === true) {
+        return
+    } else {turn = turn * -1}
 }
 
 
