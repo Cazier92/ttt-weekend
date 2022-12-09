@@ -98,15 +98,34 @@ function updateMessage() {
 // updateMessage()
 
 function handleClick(evt) {
-    const sqrIdx = evt.target.id.slice(-1)
-    // console.log(sqrIdx, typeof(sqrIdx))
+    const sqrIdx = parseInt(evt.target.id.slice(-1))
+    console.log(sqrIdx, typeof(sqrIdx))
     if(board[sqrIdx] !== null || winner === true) {
         return
     } 
+    placePiece(sqrIdx)
+    render()
+    checkForTie()
 }
-//*evt.target.innerText
+// *//evt.target.innerText
 // let arrB = gameBoard.toString()
 // console.log(arrB)
+
+function placePiece(idx) {
+    board[idx] = turn
+    console.log(board)
+}
+
+
+function checkForTie() {
+    // console.log(board.includes(null))
+    if(board.includes(null) !== true) {
+        tie = true
+    } 
+}
+
+
+
 
 
 //*// 1) Define the required variables used to track the state of the game
