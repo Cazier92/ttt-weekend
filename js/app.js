@@ -45,7 +45,10 @@ function init () {
 }
 init()
 
-function render() {}
+function render() {
+    updateBoard()
+    updateMessage()
+}
 
 function updateBoard() {
     // console.log(board)
@@ -57,7 +60,15 @@ function updateBoard() {
         }
     })
 }
-updateBoard()
+// updateBoard()
+
+function updateMessage () {
+    winner === false && tie === false ? messageEl.innerText = `It's ${turn}'s turn!` :
+    winner === false && tie === true ? messageEl.innerText = "It's a tie!" :
+    messageEl.innerText = 'Congrats! You Won!'
+}
+
+// updateMessage()
 
 
 //*// 1) Define the required variables used to track the state of the game
