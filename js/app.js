@@ -27,9 +27,31 @@ const messageEl = document.getElementById('message')
 // board = squareEls
 // console.log(board)
 
+
+const gameBoard = [
+    document.getElementById('sq0').addEventListener('click', handleClick),
+    document.getElementById('sq1').addEventListener('click', handleClick),
+    document.getElementById('sq2').addEventListener('click', handleClick),
+    document.getElementById('sq3').addEventListener('click', handleClick),
+    document.getElementById('sq4').addEventListener('click', handleClick),
+    document.getElementById('sq5').addEventListener('click', handleClick),
+    document.getElementById('sq6').addEventListener('click', handleClick),
+    document.getElementById('sq7').addEventListener('click', handleClick),
+    document.getElementById('sq8').addEventListener('click', handleClick),
+]
+// console.log(gameBoard)
+// const boardClick = function() {
+
+// }
+
 /*----------------------------- Event Listeners -----------------------------*/
 
 // addEventListener('DOMContentLoaded', init)
+//attach an event listener to the game board:
+//create a new cached element for the gameboard
+
+// gameBoard.addEventListener('click', handleClick)
+// document.getElementById('sq0').addEventListener('click', hello)
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -62,13 +84,18 @@ function updateBoard() {
 }
 // updateBoard()
 
-function updateMessage () {
+function updateMessage() {
     winner === false && tie === false ? messageEl.innerText = `It's ${turn}'s turn!` :
     winner === false && tie === true ? messageEl.innerText = "It's a tie!" :
     messageEl.innerText = 'Congrats! You Won!'
 }
 
 // updateMessage()
+
+function handleClick(evt) {
+    sqIdx = evt.target.id
+    console.log(sqIdx)
+}
 
 
 //*// 1) Define the required variables used to track the state of the game
@@ -140,23 +167,23 @@ function updateMessage () {
   //    //   `null`). To keep it simple, start with just putting a letter in 
   //    //   each square depending on what the the value of each cell is.
 
-  // 4d) Create a function called `updateMessage`
-  
-  // 4e) In the `updateMessage` function, render a message based on the 
-  //     current game state:
-  //     - If both `winner` and `tie` have a value of false (meaning the game 
-  //       is still in progress), render whose turn it is.
-  //     - If `winner` is false, but `tie` is true, render a tie message.
-  //     - Otherwise, render a congratulatory message to the player that has 
-  //       won.
+  // 4d)// Create a function called `updateMessage`
 
-  // 4f) Invoke both the `updateBoard` and the `updateMessage` functions
-  //     inside of your `render` function.
+////   4e) In the `updateMessage` function, render a message based on the 
+//   //    current game state:
+//   //    - If both `winner` and `tie` have a value of false (meaning the game 
+//  //       is still in progress), render whose turn it is.
+//   //    - If `winner` is false, but `tie` is true, render a tie message.
+//   //    - Otherwise, render a congratulatory message to the player that has 
+//   //      won.
+
+  //// 4f) Invoke both the `updateBoard` and the `updateMessage` functions
+  // //    inside of your `render` function.
 
 // Step 5 - Define the required constants
 
-  // 5a) In a constant called `winningCombos` define the eight possible winning 
-  //     combinations as an array of arrays.
+  //// 5a) In a constant called `winningCombos` define the eight possible winning 
+  //    // combinations as an array of arrays.
 
 
 // Step 6 - Handle a player clicking a square with a `handleClick` function
