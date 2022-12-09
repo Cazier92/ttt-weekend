@@ -94,9 +94,15 @@ function updateBoard() {
 // updateBoard()
 
 function updateMessage() {
-    winner === false && tie === false ? messageEl.innerText = `It's ${turn}'s turn!` :
+    let person = ''
+    if(turn === -1){
+        person = 'Player from District 11'
+    } else {
+        person = 'Player from District 12'
+    }
+    winner === false && tie === false ? messageEl.innerText = `It's ${person}'s turn!` :
     winner === false && tie === true ? messageEl.innerText = "It's a tie!" :
-    messageEl.innerText = 'Congrats! You Won!'
+    messageEl.innerText = `Congratulations Player ${person}! You are the winner of the 156 Hunger Games!`
 }
 
 // updateMessage()
