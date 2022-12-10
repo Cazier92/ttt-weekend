@@ -24,6 +24,8 @@ const squareEls = document.querySelectorAll('.sqr')
 
 const messageEl = document.getElementById('message')
 
+const resetBtnEl = document.getElementById('reset-button')
+
 
 // console.log(messageEl)
 // board = squareEls
@@ -60,6 +62,7 @@ const messageEl = document.getElementById('message')
 
 squareEls.forEach(square => square.addEventListener('click', handleClick))
 
+resetBtnEl.addEventListener('click', init)
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -88,6 +91,8 @@ function updateBoard() {
             squareEls[squareIdx].innerText = 'O'
         } else if(square === 1) {
             squareEls[squareIdx].innerText = 'X'
+        } else if(square === null) {
+            squareEls[squareIdx].innerText = ''
         }
     })
 }
@@ -108,7 +113,7 @@ function updateMessage() {
 // updateMessage()
 
 function handleClick(evt) {
-    const sqrIdx = parseInt(evt.target.id.slice(-1))
+    const sqrIdx = evt.target.id.slice(-1)
     // console.log(sqrIdx, typeof(sqrIdx))
     if(board[sqrIdx] !== null || winner === true) {
         return
@@ -141,8 +146,8 @@ function checkForWinner() {
     for (let index = 0; index < winningCombos.length; index++) {
         if(Math.abs(
             board[winningCombos[index][0]]+
-        board[winningCombos[index][1]]+
-        board[winningCombos[index][2]]
+            board[winningCombos[index][1]]+
+            board[winningCombos[index][2]]
         ) === 3) {
             winner = true
             // console.log(winner)
