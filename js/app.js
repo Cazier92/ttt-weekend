@@ -151,6 +151,7 @@ function checkForWinner() {
         ) === 3) {
             winner = true
             // console.log(winner)
+            confetti.start(1500)
         }
         
     }
