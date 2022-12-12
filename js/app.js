@@ -87,7 +87,7 @@ function updateMessage() {
 
 
 function handleClick(evt) {
-    const sqrIdx = evt.target.id.slice(-1)
+    const sqrIdx = parseInt(evt.target.id.slice(-1))
     if(board[sqrIdx] !== null || winner === true) {
         return
     } 
