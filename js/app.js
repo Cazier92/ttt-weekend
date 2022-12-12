@@ -60,6 +60,7 @@ function updateBoard() {
             squareEls[squareIdx].style.color = 'lime'
         } else if(square === 1) {
             squareEls[squareIdx].innerText = 'X'
+            squareEls[squareIdx].style.color = 'rgb(34,193,195)'
         } else if(square === null) {
             squareEls[squareIdx].innerText = ''
         }
