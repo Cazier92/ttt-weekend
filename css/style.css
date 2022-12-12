@@ -27,8 +27,8 @@ section.board {
   grid-template-rows: repeat(3, 12vmin);
   grid-template-columns: repeat(3, 12vmin);
   grid-gap: 1vmin;
-  margin-left: 30vmin;
-  margin-right: 30vmin;
+  margin-left: 35vmin;
+  /* margin-right: 30vmin; */
   font-family: 'Monoton', cursive;
   color: aqua;
   /* padding-bottom: 15px; */
