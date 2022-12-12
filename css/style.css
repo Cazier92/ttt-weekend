@@ -10,6 +10,8 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
+  justify-content: center;
+  align-self: center;
 }
 
 h1 {
@@ -20,6 +22,7 @@ h1 {
 
 section{
   text-align: center;
+  justify-content: center;
 }
 
 section.board {
@@ -27,7 +30,7 @@ section.board {
   grid-template-rows: repeat(3, 12vmin);
   grid-template-columns: repeat(3, 12vmin);
   grid-gap: 1vmin;
-  margin-left: 35vmin;
+  /* margin-left: 31vmin; */
   /* margin-right: 30vmin; */
   font-family: 'Monoton', cursive;
   color: aqua;
@@ -36,7 +39,10 @@ section.board {
   /* align-items: center; */
 }
 
-
+/* div {
+  display: block;
+  text-align: center;
+} */
 
 div.sqr {
   border: 3px solid rgba(200, 155, 255, 1);
