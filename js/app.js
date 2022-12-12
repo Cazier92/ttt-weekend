@@ -89,6 +89,7 @@ function updateBoard() {
     board.forEach(function(square, squareIdx) {
         if(square === -1) {
             squareEls[squareIdx].innerText = 'O'
+            squareEls[squareIdx].style.color = 'lime'
         } else if(square === 1) {
             squareEls[squareIdx].innerText = 'X'
         } else if(square === null) {
@@ -108,9 +109,18 @@ function updateMessage() {
     winner === false && tie === false ? messageEl.innerText = `It's ${person}'s turn!` :
     winner === false && tie === true ? messageEl.innerText = "It's a tie!" :
     messageEl.innerText = `Congratulations Player ${person}! You are the winner of the 156 Hunger Games!`
+    winner === false && tie === false ? messageEl.style.animation = 'backInDown' :
+    winner === false && tie === true ? messageEl.style.animation = 'bounce' :
+    messageEl.style.animation = 'bounce'
+    winner === false && tie === false ? messageEl.style.animationDuration = '2s' :
+    winner === false && tie === true ? messageEl.style.animationDuration = '2s' :
+    messageEl.style.animationDuration = '2s'
 }
 
+// messageEl.style.animation = 'bounce'
+// messageEl.style.animationDuration = '2s'
 // updateMessage()
+
 
 function handleClick(evt) {
     const sqrIdx = evt.target.id.slice(-1)
@@ -124,6 +134,8 @@ function handleClick(evt) {
     switchPlayerTurn()
     render()
 }
+
+
 // *//evt.target.innerText
 // let arrB = gameBoard.toString()
 // console.log(arrB)
