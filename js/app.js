@@ -115,6 +115,7 @@ function updateMessage() {
     winner === false && tie === false ? messageEl.style.animationDuration = '2s' :
     winner === false && tie === true ? messageEl.style.animationDuration = '2s' :
     messageEl.style.animationDuration = '2s'
+    winner === false && tie === true ? messageEl.style.color = 'red' : messageEl.style.color = 'white'
 }
 
 // messageEl.style.animation = 'bounce'
