@@ -107,7 +107,7 @@ function updateMessage() {
         person = 'Player from District 12'
     }
     winner === false && tie === false ? messageEl.innerText = `It's ${person}'s turn!` :
-    winner === false && tie === true ? messageEl.innerText = "It's a tie!" :
+    winner === false && tie === true ? messageEl.innerText = "It's a tie! Not the poison berries again..." :
     messageEl.innerText = `Congratulations Player ${person}! You are the winner of the 156 Hunger Games!`
     winner === false && tie === false ? messageEl.style.animation = 'backInDown' :
     winner === false && tie === true ? messageEl.style.animation = 'bounce' :
